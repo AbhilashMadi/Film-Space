@@ -19,8 +19,7 @@ import { useTheme } from "@mui/material/styles";
 import { Link } from "react-router-dom";
 
 import useStyles from "./styles.js";
-import {Sidebar} from "../exports.jsx"
-
+import { Sidebar } from "../exports.jsx";
 
 function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -38,7 +37,7 @@ function Navbar() {
               color="inherit"
               edge="start"
               style={{ outline: "none" }}
-              onClick={() => {}}
+              onClick={() => setMobileOpen((preMobileOpen) => !preMobileOpen)}
               className={classes.menuButton}>
               <Menu />
             </IconButton>
@@ -78,14 +77,17 @@ function Navbar() {
               variant="temporary"
               anchor="right"
               open={mobileOpen}
-              classes={{paper:classes.drawerPaper}}
-              ModelProps = {{keepMounted:true}}
-              >
-                <Sidebar setMobileOpen={setMobileOpen}/>
-              </Drawer>
+              onClose={() => setMobileOpen((preMobileOpen) => !preMobileOpen)}
+              classes={{ paper: classes.drawerPaper }}
+              ModelProps={{ keepMounted: true }}>
+              <Sidebar setMobileOpen={setMobileOpen} />
+            </Drawer>
           ) : (
-            <Drawer classes={{paper: classes.drawerPaper}} variant="permanent" open>
-              <Sidebar setMobileOpen={setMobileOpen}/>
+            <Drawer
+              classes={{ paper: classes.drawerPaper }}
+              variant="permanent"
+              open>
+              <Sidebar setMobileOpen={setMobileOpen} />
             </Drawer>
           )}
         </nav>

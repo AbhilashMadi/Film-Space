@@ -11,14 +11,14 @@ export default function App() {
   return (
     <div className={classes.root}>
       <CssBaseline />
-      <Navbar/>
+      <Navbar />
       <main className={classes.content}>
-        <div className={classes.toolbar}/>
+        <div className={classes.toolbar} />
         <Routes>
-          <Route path="/movie/:id" element={ <Movies/> } />
+          <Route path="/movie/:id" element={<Movies />} />
           <Route path="/actors/:id" element={<Actors />} />
-          <Route path="/" element={<Movies />} />
           <Route path="/profile/:id" element={<Profile />} />
+          <Route path="/" element={<Movies />} />
         </Routes>
       </main>
     </div>

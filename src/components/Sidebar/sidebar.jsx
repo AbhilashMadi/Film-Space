@@ -1,13 +1,42 @@
-import React from 'react'
-import { useEffect,Fragment } from 'react'
-import { Divider,List, ListItem, ListItemText,LIstSubheader,ListItemIcon, Box, CircularProgress } from '@mui/material'
-import {Link} from "react-router-dom"
-import { useTheme } from '@mui/styles'
-import useStyles from "./styles"
+import React from "react";
+import { useEffect, Fragment } from "react";
+import {
+  Divider,
+  List,
+  ListItem,
+  ListItemText,
+  ListSubheader,
+  ListItemIcon,
+  Box,
+  CircularProgress,
+} from "@mui/material";
+import { Link } from "react-router-dom";
+import { useTheme } from "@mui/styles";
 
-function Sidebar({setMobileOpen}) {
-    const theme = useTheme();
-    const classes = useStyles();
+import useStyles from "./styles";
+
+const blueLogo =
+  "https://fontmeme.com/permalink/221216/551e201de3cf56736b10942d949f207f.png";
+const redLogo =
+  "https://fontmeme.com/permalink/221216/fff8d845674880ec6d5fd60ad3a3abab.png";
+
+const Categories = [
+  { label: "Popular", value: "poular" },
+  { label: "Top Rated", value: "top_rated" },
+  { label: "Upcoming", value: "upcoming" },
+];
+
+const demoCategories = [
+  { label: "Comdey", value: "poular" },
+  { label: "Action", value: "top_rated" },
+  { label: "Horror", value: "upcoming" },
+  { label: "Animation", value: "animation" },
+  { label: "Romantic", value: "romantic" },
+];
+
+function Sidebar({ setMobileOpen }) {
+  const theme = useTheme();
+  const classes = useStyles();
   return (
     <Fragment>
       <Link to="/" className={classes.imageLink}>
@@ -15,12 +44,48 @@ function Sidebar({setMobileOpen}) {
           className={classes.image}
           src={
             theme.palette.mode === "light"
-              ? "/src/assets/film-space-red.png"
-              : "/src/assets/film-space-black.png"
+              ? "https://fontmeme.com/permalink/221216/551e201de3cf56736b10942d949f207f.png"
+              : "https://fontmeme.com/permalink/221216/fff8d845674880ec6d5fd60ad3a3abab.png"
           }
           alt="Film-Space Logo"
         />
       </Link>
+      <Divider />
+      <List>
+        <ListSubheader>Categories</ListSubheader>
+        {Categories.map(({ label, value }) => (
+          <Link key={value} className={classes.links} to="/">
+            <ListItem onClick={() => {}} button>
+              {/* <ListItemIcon>
+                <img
+                  src={blueLogo}
+                  className={classes.genreImages}
+                  height={30}
+                />
+              </ListItemIcon> */}
+              <ListItemText primary={label} />
+            </ListItem>
+          </Link>
+        ))}
+      </List>
+      <Divider />
+      <List>
+        <ListSubheader>Categories</ListSubheader>
+        {demoCategories.map(({ label, value }) => (
+          <Link key={value} className={classes.links} to="/">
+            <ListItem onClick={() => {}} button>
+              {/* <ListItemIcon>
+                <img
+                  src={blueLogo}
+                  className={classes.genreImages}
+                  height={30}
+                />
+              </ListItemIcon> */}
+              <ListItemText primary={label} />
+            </ListItem>
+          </Link>
+        ))}
+      </List>
     </Fragment>
   );
 }
