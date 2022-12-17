@@ -73,10 +73,10 @@ function Navbar() {
         </Toolbar>
       </AppBar>
       <div>
-        <nav className="classes.drawer">
+        <nav className={classes.drawer}>
           {isMobile ? (
             <Drawer
-              variant="permanent"
+              variant="temporary"
               anchor="right"
               open={mobileOpen}
               onClose={() => setMobileOpen((preMobileOpen) => !preMobileOpen)}
