@@ -12,8 +12,8 @@ import {
 } from "@mui/material";
 import { Link } from "react-router-dom";
 import { useTheme } from "@mui/styles";
-
 import useStyles from "./styles";
+import { useGetGenresQuery } from "../../services/TMDB";
 
 const blueLogo =
   "https://fontmeme.com/permalink/221216/551e201de3cf56736b10942d949f207f.png";
@@ -37,6 +37,9 @@ const demoCategories = [
 function Sidebar({ setMobileOpen }) {
   const theme = useTheme();
   const classes = useStyles();
+  const {data,isFetching} = useGetGenresQuery();
+
+  console.log(data)
   return (
     <Fragment>
       <Link to="/" className={classes.imageLink}>
@@ -67,8 +70,12 @@ function Sidebar({ setMobileOpen }) {
       <Divider />
       <List>
         <ListSubheader>Genres</ListSubheader>
-        {demoCategories.map(({ label, value }) => (
-          <Link key={value} className={classes.links} to="/">
+        { isFetching ? (
+          <Box display="flex" justifyContent="center">
+          <CircularProgress/>
+          </Box>
+        )  : data.genres.map(({ name, id }) => (
+          <Link key={name} className={classes.links} to="/">
             <ListItem onClick={() => {}} button>
               {/* <ListItemIcon>
                 <img
@@ -77,7 +84,7 @@ function Sidebar({ setMobileOpen }) {
                   height={30}
                 />
               </ListItemIcon> */}
-              <ListItemText primary={label} />
+              <ListItemText primary={name} />
             </ListItem>
           </Link>
         ))}
