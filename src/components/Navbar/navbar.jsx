@@ -58,7 +58,9 @@ function Navbar() {
                 to={`/profile/:id`}
                 className={classes.linkButton}
                 onClick={() => {}}>
-                {!isMobile && <> My Movies &nbsp; </>}
+                {!isMobile && (
+                  <React.Fragment> My Movies &nbsp; </React.Fragment>
+                )}
                 <Avatar
                   style={{ width: 30, height: 30 }}
                   alt="Profile"
@@ -79,7 +81,7 @@ function Navbar() {
               open={mobileOpen}
               onClose={() => setMobileOpen((preMobileOpen) => !preMobileOpen)}
               classes={{ paper: classes.drawerPaper }}
-              ModelProps={{ keepMounted: true }}>
+              modelprops={{ keepMounted: true }}>
               <Sidebar setMobileOpen={setMobileOpen} />
             </Drawer>
           ) : (

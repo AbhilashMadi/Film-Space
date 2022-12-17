@@ -6,8 +6,11 @@ export default makeStyles((theme) => ({
     justifyContent: "center",
     padding: "10% 0",
   },
+
   image: {
     width: "80%",
+    userDrag: "none",
+    cursor: "pointer"
   },
 
   links:{
@@ -16,7 +19,7 @@ export default makeStyles((theme) => ({
   },
 
   genreImage: {
-    filter: theme.palette.mode === "dark" ? "dark" : "invert(1)"
+    filter: theme.palette.mode === "dark" ? "invert(1)" : "dark"
   },
   
 }));

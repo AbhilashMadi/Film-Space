@@ -44,8 +44,8 @@ function Sidebar({ setMobileOpen }) {
           className={classes.image}
           src={
             theme.palette.mode === "light"
-              ? "https://fontmeme.com/permalink/221216/551e201de3cf56736b10942d949f207f.png"
-              : "https://fontmeme.com/permalink/221216/fff8d845674880ec6d5fd60ad3a3abab.png"
+              ? blueLogo
+              : redLogo
           }
           alt="Film-Space Logo"
         />
