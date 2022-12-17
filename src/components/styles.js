@@ -1,6 +1,8 @@
 import { makeStyles } from "@mui/styles";
+import { Navbar } from "./exports";
 
 export default makeStyles((theme) => ({
+  
   root: {
     display: "flex",
     height: "100%",

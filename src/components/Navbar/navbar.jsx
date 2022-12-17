@@ -76,12 +76,14 @@ function Navbar() {
         <nav className="classes.drawer">
           {isMobile ? (
             <Drawer
-              variant="temporary"
+              variant="permanent"
               anchor="right"
               open={mobileOpen}
               onClose={() => setMobileOpen((preMobileOpen) => !preMobileOpen)}
               classes={{ paper: classes.drawerPaper }}
-              modelprops={{ keepMounted: true }}>
+              ModalProps={{
+                keepMounted: true,
+              }}>
               <Sidebar setMobileOpen={setMobileOpen} />
             </Drawer>
           ) : (

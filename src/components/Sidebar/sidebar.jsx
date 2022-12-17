@@ -42,11 +42,7 @@ function Sidebar({ setMobileOpen }) {
       <Link to="/" className={classes.imageLink}>
         <img
           className={classes.image}
-          src={
-            theme.palette.mode === "light"
-              ? blueLogo
-              : redLogo
-          }
+          src={theme.palette.mode === "light" ? blueLogo : redLogo}
           alt="Film-Space Logo"
         />
       </Link>

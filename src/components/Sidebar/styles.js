@@ -8,18 +8,20 @@ export default makeStyles((theme) => ({
   },
 
   image: {
-    width: "80%",
-    userDrag: "none",
-    cursor: "pointer"
+    width: "70%",
   },
 
-  links:{
+  links: {
     color: theme.palette.text.primary,
-    textDecoration: "none"
+    textDecoration: "none",
   },
 
-  genreImage: {
-    filter: theme.palette.mode === "dark" ? "invert(1)" : "dark"
+  genreImages: {
+    filter: theme.palette.mode === "dark" ? "invert(1)" : "dark",
   },
   
+  bigText: {
+    color: "primary",
+    fontSize: 30,
+  },
 }));

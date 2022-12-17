@@ -8,8 +8,10 @@ import { Actors, Movies, MoviesInformation, Navbar, Profile } from "./exports";
 
 export default function App() {
   const classes = useStyles();
+  
   return (
     <div className={classes.root}>
+
       <CssBaseline />
       <Navbar />
       <main className={classes.content}>
