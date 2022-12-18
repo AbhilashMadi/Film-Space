@@ -2,6 +2,7 @@ import React from "react";
 import { Typography, Grid, Grow, Tooltip, Rating } from "@mui/material";
 import { Link } from "react-router-dom";
 
+import { selectGenreOrCategory } from "../../features/currentGenreOrCategory";
 import useStyles from "./styles";
 
 function Movie({ movie, index }) {

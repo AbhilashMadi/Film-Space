@@ -15,7 +15,7 @@ import { useTheme } from "@mui/styles";
 import useStyles from "./styles";
 import { useGetGenresQuery } from "../../services/TMDB";
 import genreIcons from "../../assets/genres";
-import { useDispatch,useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { selectGenreOrCategory } from "../../features/currentGenreOrCategory";
 
 const blueLogo =
@@ -24,18 +24,20 @@ const redLogo =
   "https://fontmeme.com/permalink/221216/fff8d845674880ec6d5fd60ad3a3abab.png";
 
 const Categories = [
-  { label: "Popular", value: "poular" },
+  { label: "Popular", value: "popular" },
   { label: "Top Rated", value: "top_rated" },
   { label: "Upcoming", value: "upcoming" },
 ];
 
 function Sidebar({ setMobileOpen }) {
+  const { genreIdOrCategoryName } = useSelector(
+    (state) => state.currentGenreOrCategory
+  );
   const theme = useTheme();
   const classes = useStyles();
   const { data, isFetching } = useGetGenresQuery();
   const dispatch = useDispatch();
 
-  console.log(data);
   return (
     <Fragment>
       <Link to="/" className={classes.imageLink}>
@@ -50,7 +52,11 @@ function Sidebar({ setMobileOpen }) {
         <ListSubheader>Categories</ListSubheader>
         {Categories.map(({ label, value }) => (
           <Link key={value} className={classes.links} to="/">
-            <ListItem onClick={() => {dispatch(selectGenreOrCategory(value))}} button>
+            <ListItem
+              onClick={() => {
+                dispatch(selectGenreOrCategory(value));
+              }}
+              button>
               <ListItemIcon>
                 <img
                   src={genreIcons[label.toLowerCase()]}
@@ -73,7 +79,11 @@ function Sidebar({ setMobileOpen }) {
         ) : (
           data.genres.map(({ name, id }) => (
             <Link key={name} className={classes.links} to="/">
-              <ListItem onClick={() => {dispatch(selectGenreOrCategory(id))}} button>
+              <ListItem
+                onClick={() => {
+                  dispatch(selectGenreOrCategory(id));
+                }}
+                button>
                 <ListItemIcon>
                   <img
                     src={genreIcons[name.toLowerCase()]}
