@@ -9,10 +9,14 @@ import { MovieList } from "../exports";
 
 function Movies() {
   const [page, setPage] = useState(1)
-  const { genreIdOrCategoryName } = useSelector(
+  const { genreIdOrCategoryName, searchQuery  } = useSelector(
     (state) => state.currentGenreOrCategory
   );
-  const {data, error, isFetching} = useGetMoviesQuery({genreIdOrCategoryName,page});
+  const { data, error, isFetching } = useGetMoviesQuery({
+    genreIdOrCategoryName,
+    page,
+    searchQuery,
+  });
 
   if(isFetching){
     return (
