@@ -17,6 +17,6 @@ export default makeStyles((theme) => ({
       marginBottom: "10px",
     },
 
-    backgroundColor: "rgba(197, 239, 247, 0.3)",
+    backgroundColor: "rgba(197, 239, 247, .2)",
   },
 }));

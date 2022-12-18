@@ -21,12 +21,13 @@ export default makeStyles((theme) => ({
   },
 
   image: {
-    borderRadius: "20px",
-    marginBottom: "10px",
+    // marginBottom: "10px",
     height: "300px",
+    boxShadow:
+      "rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset",
+      transition: "all .2s ease-in-out",
     "&:hover": {
-      transform: "scale(1.05)",
-      boxShadow: "12",
+      transform: "scale(1.1)",
     },
   },
 
@@ -39,5 +40,17 @@ export default makeStyles((theme) => ({
     marginTop: "10px",
     marginBottom: "0",
     textAlign: "center",
+  },
+
+  imgSpan: {
+    backgroundColor: "blue",
+    // width: "210px",
+    height: "300px",
+    overflow: "hidden",
+    borderRadius: "20px",
+    transition: "0.3s",
+    boxShadow:
+      "rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset",
+      marginBottom: "10px",
   },
 }));

@@ -22,6 +22,6 @@ export default makeStyles((theme) => ({
   
   bigText: {
     color: "primary",
-    fontSize: 30,
+    fontSize: "30",
   },
 }));

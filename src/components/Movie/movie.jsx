@@ -17,21 +17,23 @@ function Movie({ movie, index }) {
               ? <img alt={movie.title} className={classes.image} src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} />
               : <img alt={movie.title} className={classes.image} src={"https://fillmurray.com/200/300"}/>
             } */}
-          <img
-            src={
-              movie.poster_path
-                ? `https://image.tmdb.org/t/p/w500/${movie.poster_path}`
-                : "https://fillmurray.com/200/300"
-            }
-            alt={movie.title}
-            className={classes.image}
-          />
+          <span className={classes.imgSpan}>
+            <img
+              src={
+                movie.poster_path
+                  ? `https://image.tmdb.org/t/p/w500/${movie.poster_path}`
+                  : "https://fillmurray.com/200/300"
+              }
+              alt={movie.title}
+              className={classes.image}
+            />
+          </span>
           <Typography className={classes.title} variant="h5">
             {movie.title}
           </Typography>
           <Tooltip
             disableTouchListener
-            title={movie.vote_average+ "/10 IMDB Rating"}
+            title={movie.vote_average + "/10 IMDB Rating"}
             placement="bottom"
             arrow>
             <div>

@@ -26,7 +26,7 @@ function Search() {
         onKeyPress={handleKeyPress}
         value={query}
         onChange={(e) => setQuery(e.target.value)}
-        variant="outlined"
+        variant="standard"
         InputProps={{
           className: classes.input,
           startAdornment: (
