@@ -51,8 +51,6 @@ function Navbar() {
           const { token: userData } = await moviesApi.get(
             `/account?session_id=${sessionId}`
           );
-
-          dispatch(setUser(userData));
         }
       }
     };
