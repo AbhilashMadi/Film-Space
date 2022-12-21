@@ -1,6 +1,6 @@
 import React from "react";
 import {useState, useEffect} from "react";
-import {Box, CircularProgress, useMediaQuery, Typography} from "@mui/material";
+import {Box,CircularProgress, useMediaQuery, Typography} from "@mui/material";
 import {useSelector} from "react-redux";
 
 import { selectGenreOrCategory } from "../../features/currentGenreOrCategory";
@@ -21,7 +21,7 @@ function Movies() {
   if(isFetching){
     return (
       <Box display="flex" justifyContent="center">
-        <CircularProgress size="4rem"/>
+        <CircularProgress size="2rem"/>
       </Box>
     )
   }
