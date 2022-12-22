@@ -94,10 +94,10 @@ function MoviesInformation() {
               gutterBottom
               variant="subtitle1"
               style={{ marginLeft: "10px" }}>
-              {data.vote_average} / 10
+              {data?.vote_average} / 10
             </Typography>
           </Box>
-          {data.budget !== 0 && (
+          {data?.budget > 0 && (
             <Typography>Budget: {data?.budget} USD</Typography>
           )}
           <Typography gutterBottom variant="h6" align="center">

@@ -8,6 +8,9 @@ import { useGetMoviesQuery } from "../../services/TMDB";
 import { MovieList, Pagination } from "../exports";
 
 function Movies() {
+  const lg = useMediaQuery((theme) => theme.breakpoints.only("lg"));
+
+  const numberOfMovies = lg ? 16 : 18
   const [page, setPage] = useState(1)
   const { genreIdOrCategoryName, searchQuery  } = useSelector(
     (state) => state.currentGenreOrCategory
@@ -41,8 +44,12 @@ function Movies() {
   
   return (
     <div>
-      <MovieList movies={data} />
-      <Pagination currentPage={page} setPage={setPage} totalPages = { data.total_pages}/>
+      <MovieList movies={data} numberOfMovies={numberOfMovies} />
+      <Pagination
+        currentPage={page}
+        setPage={setPage}
+        totalPages={data.total_pages}
+      />
     </div>
   );
 }
