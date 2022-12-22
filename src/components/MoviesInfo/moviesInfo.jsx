@@ -48,13 +48,12 @@ function MoviesInformation() {
   const [open, setOpen] = useState(false)
   
   const {data, isFetching, error} = useGetMovieQuery(id);
-  const {data:favoriteMovies} = useGetListQuery({listName: "favorite/moives",accountId:user.id,sessionId:localStorage.getItem("session_id"),page:1});
-  const {data:watchlistMovies} = useGetListQuery({listName: "watchlist/moives",accountId:user.id,sessionId:localStorage.getItem("session_id"),page:1});
   const {data:recommendations, isFetching:isRecommendationsFetching} = useGetRecommendationsQuery({list:"/recommendations",movie_id:id});
-
+  const {data:watchlistMovies} = useGetListQuery({listName: "watchlist/moives",accountId:user.id,sessionId:localStorage.getItem("session_id"),page:1});
+  const {data:favoriteMovies} = useGetListQuery({listName: "favorite/moives",accountId:user.id,sessionId:localStorage.getItem("session_id"),page:1});
+  
   const [isMovieFavorited, setIsMovieFavorited] = useState(false);
   const [isMovieWatchlisted, setIsMovieWatchlisted] = useState(false);
-
   useEffect(()=>{
     setIsMovieFavorited(!!favoriteMovies?.results?.find((movie) => movie?.id === data?.id));
   },[favoriteMovies, data])
@@ -62,6 +61,7 @@ function MoviesInformation() {
   useEffect(()=>{
     setIsMovieWatchlisted(!!watchlistMovies?.results?.find((movie) => movie?.id === data?.id));
   },[watchlistMovies, data])
+
 
   const addToFavorites = async () => {
    await axios.post(`https://api.themoviedb.org/3/account/${user.id}/favorite?api_key=${process.env.REACT_APP_TMDB_KEY}&session_id=${localStorage.getItem('session_id')}`, {
@@ -82,12 +82,7 @@ function MoviesInformation() {
     setIsMovieWatchlisted((preState) => !preState );
   };
 
-  // const isMovieFavorited = false;
-  // const isMovieWatchlisted = false;
-
-  // console.log(recommendations)
-
-  if (isRecommendationsFetching) {
+  if (isFetching) {
     return (
       <Box display="flex" alignItems="center" justifyContent="center">
         <CircularProgress size="4rem" />

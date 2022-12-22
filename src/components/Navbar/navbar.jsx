@@ -58,6 +58,10 @@ function Navbar() {
     logInUser();
   }, [token]);
 
+  const afterLogin = () =>{
+    // setTimeout(()=>{window.location.reload()},500)
+  }
+
   return (
     <React.Fragment>
       <AppBar position="fixed">
@@ -91,7 +95,7 @@ function Navbar() {
                 component={Link}
                 to={`/profile/${user.id}`}
                 className={classes.linkButton}
-                onClick={() => {}}>
+                onClick={() => afterLogin()}>
                 {!isMobile && (
                   <React.Fragment> My Movies &nbsp; </React.Fragment>
                 )}
