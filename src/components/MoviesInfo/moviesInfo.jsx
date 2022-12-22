@@ -51,9 +51,9 @@ function MoviesInformation() {
   const isMovieFavorited = false;
   const isMovieWatchlisted = false;
 
-  console.log(recommendations)
+  // console.log(recommendations)
 
-  if(isFetching){
+  if (isRecommendationsFetching) {
     return (
       <Box display="flex" alignItems="center" justifyContent="center">
         <CircularProgress size="4rem" />

@@ -22,7 +22,7 @@ function Movie({ movie, index }) {
               src={
                 movie.poster_path
                   ? `https://image.tmdb.org/t/p/w500/${movie.poster_path}`
-                  : "https://fillmurray.com/200/300"
+                  : "https://www.bbwphysicaltherapy.com/wp-content/uploads/2022/05/service-placeholder1-540x748.jpg"
               }
               alt={movie.title}
               className={classes.image}
