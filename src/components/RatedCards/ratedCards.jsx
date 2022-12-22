@@ -6,7 +6,6 @@ import { Movie } from "../exports";
 
 function RatedCards({ title, data }) {
   const classes = useStyles();
-  console.log("hello")
 
   return (
     <Box>

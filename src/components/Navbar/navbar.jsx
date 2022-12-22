@@ -1,5 +1,5 @@
 import React from "react";
-import { useState, useEffect } from "react";
+import { useState, useEffect ,useContext} from "react";
 import {
   AppBar,
   IconButton,
@@ -15,6 +15,8 @@ import {
   Brightness4,
   Brightness7,
 } from "@mui/icons-material";
+
+import { ColorModeContext } from "../../utils/ToggleColorMode";
 import { useTheme } from "@mui/material/styles";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
@@ -32,6 +34,8 @@ function Navbar() {
   const isMobile = useMediaQuery("(max-width:600px)");
   const theme = useTheme();
   const dispatch = useDispatch();
+
+  const colorMode = useContext(ColorModeContext);
 
   const token = localStorage.getItem("request_token");
   const sessionIdfromLocalStorage = localStorage.getItem("session_id");
@@ -76,7 +80,7 @@ function Navbar() {
               <Menu />
             </IconButton>
           )}
-          <IconButton color="inherit" sx={{ ml: 1 }} onClick={() => {}}>
+          <IconButton color="inherit" sx={{ ml: 1 }} onClick={() => {colorMode.toggleColorMode}}>
             {theme.palette.mode === "dark" ? <Brightness7 /> : <Brightness4 />}
           </IconButton>
           {!isMobile && <Search />}
