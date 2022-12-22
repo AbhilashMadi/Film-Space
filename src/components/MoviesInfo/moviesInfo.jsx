@@ -71,8 +71,8 @@ function MoviesInformation() {
 
   return (
     <Grid container className={classes.containerSpaceAround}>
-      <Grid item sm={12} lg={4}>
-        <div className={classes.posterDiv}>
+      <Grid item sm={12} lg={4} style={{marginBottom:"15px"}}>
+        <div className={classes.posterDiv} style={{marginBottom:"15px"}}>
           <img
             src={`https://image.tmdb.org/t/p/w500/${data?.poster_path}`}
             className={classes.poster}
@@ -102,9 +102,7 @@ function MoviesInformation() {
           )}
           <Typography gutterBottom variant="h6" align="center">
             {data?.runtime}min
-            {data?.spoken_languages.length > 0
-              ? ` / ${data?.spoken_languages[0].name}`
-              : ""}
+            {data?.spoken_languages.length > 0 && `/${data?.spoken_languages[0].name}`}
           </Typography>
         </Grid>
         <Grid item className={classes.genresContainer}>

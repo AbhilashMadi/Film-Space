@@ -43,7 +43,7 @@ export default makeStyles((theme) => ({
   },
 
   imgSpan: {
-    backgroundColor: "blue",
+    // backgroundColor: "blue",
     // width: "210px",
     height: "300px",
     overflow: "hidden",

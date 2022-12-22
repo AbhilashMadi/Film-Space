@@ -24,8 +24,6 @@ const redLogo =
   "https://fontmeme.com/permalink/221216/fff8d845674880ec6d5fd60ad3a3abab.png";
 
 const Categories = [
-  // { label: "Get Latest", value: "get_latest" },
-  // { label: "Now Playing", value: "now_playing" },
   { label: "Popular", value: "popular" },
   { label: "Top Rated", value: "top_rated" },
   { label: "Upcoming", value: "upcoming" },

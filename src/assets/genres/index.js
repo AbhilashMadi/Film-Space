@@ -21,6 +21,8 @@ import western from './western.png';
 import popular from './popular.png';
 import topRated from './top rated.png';
 import upcoming from './upcoming.png';
+// import latest from "./latest.png";
+//import nowPlaying from './now_playing.png;
 
 const genres = {
   action,
