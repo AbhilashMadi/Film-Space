@@ -49,7 +49,7 @@ export default makeStyles((theme) => ({
     transition: "all .3s ease-in-out",
     // backgroundImage: "linear-gradient(90deg,#0052D4,#4364F7,#6FB1FC)",
     "&:hover": {
-      width: "20px",
+      width: "40px",
     },
   },
 }));

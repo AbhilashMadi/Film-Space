@@ -82,14 +82,14 @@ function MoviesInformation() {
       </Grid>
       <Grid item container direction="column" lg={7}>
         <Typography variant="h3" align="center" gutterBottom>
-          {data?.title} ({data.release_date.split("-")[0]})
+          {data?.title} ({data?.release_date.split("-")[0]})
         </Typography>
         <Typography variant="h5" align="center" gutterBottom>
           {data?.tagline}
         </Typography>
         <Grid item className={classes.containerSpaceAround}>
           <Box display="flex" align="center">
-            <Rating readOnly value={data.vote_average / 2} />
+            <Rating readOnly value={data?.vote_average / 2} />
             <Typography
               gutterBottom
               variant="subtitle1"
