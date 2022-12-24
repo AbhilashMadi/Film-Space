@@ -27,6 +27,8 @@ import useStyles from "./styles.js";
 import { Sidebar, Search } from "../exports.jsx";
 
 function Navbar() {
+  const colorMode = useContext(ColorModeContext);
+
   const { isAuthenticated, user } = useSelector(userSelector);
 
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -34,8 +36,6 @@ function Navbar() {
   const isMobile = useMediaQuery("(max-width:600px)");
   const theme = useTheme();
   const dispatch = useDispatch();
-
-  const colorMode = useContext(ColorModeContext);
 
   const token = localStorage.getItem("request_token");
   const sessionIdfromLocalStorage = localStorage.getItem("session_id");
@@ -80,8 +80,8 @@ function Navbar() {
               <Menu />
             </IconButton>
           )}
-          <IconButton color="inherit" sx={{ ml: 1 }} onClick={() => {colorMode.toggleColorMode}}>
-            {theme.palette.mode === "dark" ? <Brightness7 /> : <Brightness4 />}
+          <IconButton color="inherit" sx={{ ml: 1 }} onClick={colorMode.toggleColorMode}>
+            {theme.palette.mode === "light" ? <Brightness7 /> : <Brightness4 />}
           </IconButton>
           {!isMobile && <Search />}
           <div>

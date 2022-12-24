@@ -7,8 +7,11 @@ import { Box, Button, Typography } from "@mui/material";
 import { useGetListQuery } from "../../services/TMDB";
 import RatedCards from "../RatedCards/ratedCards";
 
+import useStyles from "./styles"
+
 const Profile = () => {
   const { user } = useSelector(userSelector);
+  const classes = useStyles();
 
   const { data: favoriteMovies, refetch: refetchFavorites } = useGetListQuery({
     listName: "favorite/movies",
@@ -35,9 +38,9 @@ const Profile = () => {
   };
 
   return (
-    <Box>
+    <Box className={classes.profile}>
       <Box display={"flex"} justifyContent="flex-end">
-        <Button onClick={logOut} variant="contained">
+        <Button onClick={logOut} className={classes.logOut}>
           Logout &nbsp; <ExitToApp />
         </Button>
       </Box>
