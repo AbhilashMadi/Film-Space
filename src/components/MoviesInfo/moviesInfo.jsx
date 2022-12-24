@@ -100,8 +100,8 @@ function MoviesInformation() {
 
   return (
     <Grid container className={classes.containerSpaceAround}>
-      <Grid item sm={12} lg={4} style={{marginBottom:"15px"}}>
-        <div className={classes.posterDiv} style={{marginBottom:"15px"}}>
+      <Grid item sm={12} lg={4} style={{ marginBottom: "15px" }}>
+        <div className={classes.posterDiv} style={{ marginBottom: "15px" }}>
           <img
             src={`https://image.tmdb.org/t/p/w500/${data?.poster_path}`}
             className={classes.poster}
@@ -131,7 +131,8 @@ function MoviesInformation() {
           )}
           <Typography gutterBottom variant="h6" align="center">
             {data?.runtime}min
-            {data?.spoken_languages.length > 0 && `/${data?.spoken_languages[0].name}`}
+            {data?.spoken_languages.length > 0 &&
+              `/${data?.spoken_languages[0].name}`}
           </Typography>
         </Grid>
         <Grid item className={classes.genresContainer}>
@@ -208,10 +209,11 @@ function MoviesInformation() {
             <Grid item xs={12} sm={6} className={classes.buttonContainer}>
               <div>
                 <Button
-                  variant="outlined"
-                  style={{
-                    margin: "10px",
-                  }}
+                  className={classes.buttonsRight}
+                  // variant="outlined"
+                  // style={{
+                  //   margin: "10px",
+                  // }}
                   target="_blank"
                   rel="noopener noreferrer"
                   href={data?.homepage}
@@ -219,10 +221,11 @@ function MoviesInformation() {
                   Website
                 </Button>
                 <Button
-                  variant="outlined"
-                  style={{
-                    margin: "10px",
-                  }}
+                  className={classes.buttonsRight}
+                  // variant="outlined"
+                  // style={{
+                  //   margin: "10px",
+                  // }}
                   target="_blank"
                   rel="noopener noreferrer"
                   href={`https://www.imdb.com/title/${data?.imdb_id}`}
@@ -230,10 +233,11 @@ function MoviesInformation() {
                   IMDB
                 </Button>
                 <Button
-                  variant="outlined"
-                  style={{
-                    margin: "10px",
-                  }}
+                  className={classes.buttonsRight}
+                  // variant="outlined"
+                  // style={{
+                  //   margin: "10px",
+                  // }}
                   onClick={() => setOpen(true)}
                   href="#"
                   endIcon={<Theaters />}>
@@ -244,21 +248,23 @@ function MoviesInformation() {
             <Grid item xs={12} sm={6} className={classes.buttonContainer}>
               <div>
                 <Button
-                  style={{ margin: "10px" }}
+                  className={classes.buttonsLeft}
+                  // style={{ margin: "10px" }}
                   variant="contained"
                   onClick={addToFavorites}
                   endIcon={
                     isMovieFavorited ? (
                       <FavoriteBorderOutlined />
                     ) : (
-                      <Favorite style={{ color: "#ff6fff" }} />
+                      <Favorite/>
                     )
                   }>
                   {isMovieFavorited ? "Unfavorite" : "Favorite"}
                 </Button>
                 <Button
                   variant="contained"
-                  style={{ margin: "10px" }}
+                  // style={{ margin: "10px" }}
+                  className={classes.buttonsLeft}
                   onClick={addToWatchList}
                   endIcon={
                     isMovieWatchlisted ? (
@@ -271,7 +277,8 @@ function MoviesInformation() {
                 </Button>
                 <Button
                   variant="contained"
-                  style={{ margin: "10px" }}
+                  className={classes.buttonsLeft}
+                  // style={{ margin: "10px" }}
                   endIcon={<ArrowBack />}
                   sx={{ borderColor: "primary.main" }}>
                   <Typography

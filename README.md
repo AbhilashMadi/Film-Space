@@ -34,9 +34,9 @@
 - Fast and interactive
 - Responsive
 
->**MORE ABOUT**
-<summery>
-Features : 
+>**MORE ABOUT** <br/>
+        Features :         
+    <summery>
 - Movies DataBase,
 - Login
 - User Data will be saved
@@ -45,7 +45,9 @@ Features :
 - Dark Mode
 - Select By Category
 - Search
-- 
-</summery>
+- voice assistent functionality
+- Add movies to watchlist, favorite
+    </summery>
 
 >**DEVELOPPER VIEW**
+<details><summary>What is about!</summary>updated soon...</details>

@@ -118,4 +118,18 @@ export default makeStyles((theme) => ({
       height: "90%",
     },
   },
+  buttonsRight: {
+    border:
+      theme.palette.mode === "light"
+        ? "1px solid #1976d2 !important"
+        : "1px solid #DB202C !important",
+    margin: "10px !important",
+    color: theme.palette.mode === "light" ? "intial" : "#E3242D !important",
+  },
+
+  buttonsLeft: {
+    margin: "10px !important",
+    color: !theme.palette.mode === "light" ? "intial" : "#FFF !important",
+    backgroundColor:theme.palette.mode === "light" ? "intial" : "#E3242D !important"
+  },
 }));
