@@ -35,5 +35,17 @@
 - Responsive
 
 >**MORE ABOUT**
+<summery>
+Features : 
+- Movies DataBase,
+- Login
+- User Data will be saved
+- Fast and responsive
+- Cool UI features
+- Dark Mode
+- Select By Category
+- Search
+- 
+</summery>
 
 >**DEVELOPPER VIEW**

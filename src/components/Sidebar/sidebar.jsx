@@ -10,6 +10,10 @@ import {
   Box,
   CircularProgress,
 } from "@mui/material";
+
+import TwitterIcon from "@mui/icons-material/Twitter";
+import GitHubIcon from "@mui/icons-material/GitHub";
+
 import { Link } from "react-router-dom";
 import { useTheme } from "@mui/styles";
 import useStyles from "./styles";
@@ -47,7 +51,23 @@ function Sidebar({ setMobileOpen }) {
           alt="Film-Space Logo"
         />
       </Link>
-      <Divider />
+      {/* <Divider /> */}
+      <Divider display="flex" flexDirection="row">
+        <a
+          href="https://twitter.com/abhilash_madi"
+          title="Abhilash Kumar"
+          target="_blank"
+          className={classes.developer}>
+          <TwitterIcon style={{fontSize:"16px"}}/>
+        </a>
+        <a
+          title="Abhilash Kumar"
+          href="https://github.com/AbhilashMadi"
+          target="_blank"
+          className={classes.developer}>
+          <GitHubIcon style={{fontSize:"16px"}}/>
+        </a>
+      </Divider>
       <List>
         <ListSubheader>Categories</ListSubheader>
         {Categories.map(({ label, value }) => (

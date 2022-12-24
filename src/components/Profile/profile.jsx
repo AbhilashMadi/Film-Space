@@ -7,6 +7,8 @@ import { Box, Button, Typography } from "@mui/material";
 import { useGetListQuery } from "../../services/TMDB";
 import RatedCards from "../RatedCards/ratedCards";
 
+import {Link} from "react-router-dom"
+
 import useStyles from "./styles"
 
 const Profile = () => {

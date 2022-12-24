@@ -19,9 +19,15 @@ export default makeStyles((theme) => ({
   genreImage: {
     filter: theme.palette.mode === "dark" && "invert(1)",
   },
-  
+
   bigText: {
     color: "primary",
     fontSize: "30",
+  },
+
+  developer: {
+    textDecoration: "none",
+    color: theme.palette.mode === "light" ? "#1976d2" : "#DB202C",
+    margin:"4px",
   },
 }));

@@ -22,10 +22,11 @@ export default makeStyles((theme) => ({
 
   image: {
     // marginBottom: "10px",
-    height: "300px",
     boxShadow:
       "rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset",
-      transition: "all .2s ease-in-out",
+    height: "300px",
+    // boxShadow: theme.palette.mode === "light" ? "rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset": "",
+    transition: "all .2s ease-in-out",
     "&:hover": {
       transform: "scale(1.1)",
     },
@@ -49,8 +50,13 @@ export default makeStyles((theme) => ({
     overflow: "hidden",
     borderRadius: "20px",
     transition: "0.3s",
+    // boxShadow:
+    //   "rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset",
     boxShadow:
-      "rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset",
-      marginBottom: "10px",
+      theme.palette.mode === "light"
+        ? "rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset"
+        : "0 0 20px rgba(0,0,0,07)",
+        border: theme.palette.mode==="dark" && "2px solid rgba(257,257,257,0.3)",
+        marginBottom: "10px",
   },
 }));
