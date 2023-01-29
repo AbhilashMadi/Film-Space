@@ -193,7 +193,7 @@ function MoviesInformation() {
                         align="center"
                         style={{
                           fontFamily: "Caveat",
-                          fontWeight: "600",
+                          fontWeight: "400",
                           fontSize: "20px",
                           wordWrap: "break-word",
                         }}>

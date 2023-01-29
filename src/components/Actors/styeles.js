@@ -50,6 +50,8 @@ export default makeStyles((theme) => ({
     width: "30px",
     height: "4px",
     background: "#1976d2;",
+    backgroundColor:
+      theme.palette.mode === "light" ? "intial" : "#DB202C !important",
     marginTop: "0px",
     borderRadius: "50px",
     transition: "all .3s ease-in-out",
@@ -57,5 +59,11 @@ export default makeStyles((theme) => ({
     "&:hover": {
       width: "40px",
     },
+  },
+
+  button: {
+    backgroundColor:
+      theme.palette.mode === "light" ? "intial" : "#DB202C !important",
+    color: theme.palette.mode === "light" ? "intial" : "#FFFFFF !important",
   },
 }));

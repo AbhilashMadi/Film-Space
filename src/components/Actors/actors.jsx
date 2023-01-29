@@ -43,7 +43,7 @@ function Actors() {
   return (
     <React.Fragment>
       <Grid container spacing={3}>
-        <Grid item lg={5} xl={4} >
+        <Grid item lg={5} xl={4}>
           <div className={classes.actorImage}>
             <img
               className={classes.image}
@@ -77,6 +77,7 @@ function Actors() {
           </Typography>
           <Box marginTop="2rem" display="flex" justifyContent="space-around">
             <Button
+              className={classes.button}
               variant="contained"
               color="primary"
               target="_blank"
@@ -84,6 +85,7 @@ function Actors() {
               IMDB
             </Button>
             <Button
+              className={classes.button}
               startIcon={<ArrowBack />}
               variant="outlined"
               onClick={() => navigate(-1)}>
