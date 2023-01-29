@@ -14,6 +14,9 @@
 #keys
 .env
 
+#information
+.txt
+
 # misc
 .DS_Store
 .env.local
