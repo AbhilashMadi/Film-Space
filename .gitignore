@@ -15,7 +15,7 @@
 .env
 
 #saved text
-*.text
+*.txt
 
 # misc
 .DS_Store
