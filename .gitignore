@@ -14,8 +14,8 @@
 #keys
 .env
 
-#information
-information.txt
+#saved text
+.text
 
 # misc
 .DS_Store
