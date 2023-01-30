@@ -43,7 +43,7 @@ function Movies() {
   }
   
   return (
-    <div>
+    <div className="movies-scroll">
       <MovieList movies={data} numberOfMovies={numberOfMovies} />
       <Pagination
         currentPage={page}

@@ -15,7 +15,7 @@
 .env
 
 #information
-.txt
+information.txt
 
 # misc
 .DS_Store

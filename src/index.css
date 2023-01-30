@@ -3,7 +3,8 @@ html {
 }
 
 ::-webkit-scrollbar {
- width:7px;
+ width: 7px;
+ height: 0px;
 }
 
 ::-webkit-scrollbar-track {
@@ -12,4 +13,8 @@ html {
 
 ::-webkit-scrollbar-thumb {
     background: #A5A5A5;
+}
+
+.movies-scroll::-webkit-scrollbar-thumb{
+  background: #000;
 }
