@@ -13,7 +13,7 @@ import { width } from "@mui/system";
 const useAlan = () => {
   const { setMode } = useContext(ColorModeContext);
   const dispatch = useDispatch();
-  const navigate = useNavigate();
+  let navigate = useNavigate();
 
   useEffect(() => {
     alanBtn({
@@ -48,7 +48,9 @@ const useAlan = () => {
         } else if (command === "search") {
           dispatch(searchMovie(query));
         } else if (command === "reload") {
-          window.location.reload();
+          navigate("/");
+        } else if (command === "home") {
+          navigate("/");
         }
       },
     });

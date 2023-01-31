@@ -21,6 +21,7 @@ import { useGetGenresQuery } from "../../services/TMDB";
 import genreIcons from "../../assets/genres";
 import { useDispatch, useSelector } from "react-redux";
 import { selectGenreOrCategory } from "../../features/currentGenreOrCategory";
+import { useEffect } from "react";
 
 const blueLogo =
   "https://fontmeme.com/permalink/221216/551e201de3cf56736b10942d949f207f.png";
@@ -41,6 +42,10 @@ function Sidebar({ setMobileOpen }) {
   const classes = useStyles();
   const { data, isFetching } = useGetGenresQuery();
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    setMobileOpen(false);
+  },[genreIdOrCategoryName])
 
   return (
     <Fragment>
