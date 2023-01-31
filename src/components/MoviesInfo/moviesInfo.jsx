@@ -29,7 +29,7 @@ import RemoveCircleOutlineIcon from "@mui/icons-material/RemoveCircleOutline";
 import ControlPointIcon from "@mui/icons-material/ControlPoint";
 
 import MovieList from "../MovieList/movieList"
-import {selectGenreOrCategory} from "../../features/currentGenreOrCategory"
+import {selectGenreOrCategory} from "../../features/currentGenreOrCategory";
 import useStyles from "./styles"
 import {
   useGetListQuery,

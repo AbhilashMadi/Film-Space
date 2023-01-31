@@ -60,7 +60,7 @@ function Navbar() {
     };
 
     logInUser();
-  }, [token]);
+  }, [token, dispatch, sessionIdfromLocalStorage]);
 
   const afterLogin = () =>{
     // setTimeout(()=>{window.location.reload()},500)
@@ -109,11 +109,11 @@ function Navbar() {
                 <Avatar
                   style={{ width: 30, height: 30 }}
                   alt="Profile"
-                  src="https://img2.freepng.es/20190704/xaa/kisspng-logo-portable-network-graphics-clip-art-image-tran-user-logo-search-result-8-cliparts-for-user-log-5d1e8b8841fe58.8142007815622828882703.jpg"
+                  src={`https://www.themoviedb.org/t/p/w64_and_h64_face${user?.avatar?.tmdb?.avatar_path}`}
                 />
               </Button>
             )}
-          </div>
+          </div> 
           {isMobile && <Search />}
         </Toolbar>
       </AppBar>
@@ -133,9 +133,9 @@ function Navbar() {
             </Drawer>
           ) : (
             <Drawer
-              classes={{ paper: classes.drawerPaper }}
-              variant="permanent"
-              open>
+            classes={{ paper: classes.drawerPaper }}
+            variant="permanent"
+            open>
               <Sidebar setMobileOpen={setMobileOpen} />
             </Drawer>
           )}
