@@ -9,3 +9,4 @@ export { default as Movie } from "./Movie/movie"
 export { default as Search} from "./Search/search"
 export { default as Pagination} from "./Pagination/pagination";
 export {default as RatedCards } from "./RatedCards/ratedCards";
+export {default as FeaturedMovie} from "./featuredMovie/featuredMovie";

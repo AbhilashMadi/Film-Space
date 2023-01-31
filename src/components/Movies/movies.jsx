@@ -5,7 +5,7 @@ import {useSelector} from "react-redux";
 
 import { selectGenreOrCategory } from "../../features/currentGenreOrCategory";
 import { useGetMoviesQuery } from "../../services/TMDB";
-import { MovieList, Pagination } from "../exports";
+import { FeaturedMovie, MovieList, Pagination } from "../exports";
 
 function Movies() {
   const lg = useMediaQuery((theme) => theme.breakpoints.only("lg"));
@@ -44,6 +44,7 @@ function Movies() {
   
   return (
     <div className="movies-scroll">
+      <FeaturedMovie movie={data.results[0] || data.results[1]}/>
       <MovieList movies={data} numberOfMovies={numberOfMovies} />
       <Pagination
         currentPage={page}
