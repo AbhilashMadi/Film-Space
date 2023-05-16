@@ -36,8 +36,6 @@ import {
   useGetMovieQuery,
   useGetRecommendationsQuery,
 } from "../../services/TMDB";
-import { userSelector } from "../../features/auth";
-import { findDOMNode } from "react-dom";
 
 
 function MoviesInformation() {

@@ -8,7 +8,7 @@ function MovieList({ movies, numberOfMovies, excludeFirst }) {
   const startFrom = excludeFirst ? 1 : 0;
 
   return (
-    <Grid container className={classes.moviesContainer}>
+    <Grid container className={classes.moviesContainer} sx={{ display: 'flex', justifyContent:'center' }}>
       {movies.results
         .slice(startFrom, numberOfMovies)
         .map((movie, index) => (
