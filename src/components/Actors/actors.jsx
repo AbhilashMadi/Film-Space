@@ -61,17 +61,17 @@ function Actors() {
             justifyContent: "center",
             flexDirection: "column",
           }}>
-          <Typography variant="h2" style={{ fontFamily: "Inter" }} gutterBottom>
+          <Typography variant="h2" sx={{ fontFamily: "Inter" }} gutterBottom>
             {data?.name}
           </Typography>
           <span className={classes.nameDeco}></span>
-          <Typography variant="h5" style={{ fontFamily: "Inter" }} gutterBottom>
+          <Typography variant="h5" sx={{ fontFamily: "Inter" }} gutterBottom>
             Born: {new Date(data?.birthday).toDateString()}
           </Typography>
           <Typography
             variant="body2"
             align="justify"
-            style={{ fontFamily: "Inter" }}
+            sx={{ fontFamily: "Inter" }}
             gutterBottom>
             {data?.biography || "Sorry, no bioGraphy yet..."}
           </Typography>
